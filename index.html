@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+
+    <!-- build:css css/styles.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="bower_components/ng-img-crop/compile/minified/ng-img-crop.css"/>
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="content/app.css">
+    <!-- endinject -->
+    <!-- endbuild  -->
+
+    <!-- cdns -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+
+    <meta name="viewport" content="initial-scale=1"/>
+</head>
+
+<body ng-cloak layout="row">
+
+<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2">
+
+    <header class="nav-header" style="background: #607D8B;">
+        <h1 class="docs-logotype md-heading" style="text-align: center; color: white">LCD Market</h1>
+
+        <div ng-if="authenticated" style="color: white;" layout="row" layout-align="center center" class="auth-wrapper">
+            <img ng-src="{{authenticated.data.avatar}}" class="md-avatar">
+
+            <div layout="column" layout-align="center center">
+                <div>{{authenticated.data.email}}</div>
+                <small>Balance: <span>{{authenticated.data.balance}}€</span></small>
+            </div>
+            <div style="margin-left: 10px;">
+                <md-icon md-svg-src="content/icons/ic_exit_to_app_black_24px.svg" ui-sref="logout">Sair</md-icon>
+            </div>
+        </div>
+        <br/><br/>
+    </header>
+
+    <md-content flex="" role="navigation" class="flex">
+        <br/>
+        You'll see a menu here soon. Have a little fate!
+
+    </md-content>
+</md-sidenav>
+
+
+<div layout="column" flex="">
+    <md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar">
+
+        <div class="md-toolbar-tools docs-toolbar-tools" tabindex="-1">
+            {{vm.title}}
+        </div>
+
+    </md-toolbar>
+
+    <div ui-view>
+
+    </div>
+</div>
+
+
+<!-- build:js js/libs.js -->
+<!-- inject dependencies defined in bower.json using wiredep and gulp-inject -->
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/satellizer/satellizer.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="bower_components/ng-img-crop/compile/minified/ng-img-crop.js"></script>
+<script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+<script src="bower_components/angular-inflector/dist/angular-inflector.min.js"></script>
+<script src="bower_components/angular-restmod/dist/angular-restmod-bundle.min.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/restmod-style-drf-paged/restmod-style-drf-paged.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js js/app.js -->
+<!-- inject our custom code using gulp-inject -->
+<!-- inject:js -->
+<script src="app/app.module.js"></script>
+<script src="app/accounts/accounts.module.js"></script>
+<script src="app/auth/auth.module.js"></script>
+<script src="app/core/core.module.js"></script>
+<script src="app/market/market.module.js"></script>
+<script src="app/tables/tables.module.js"></script>
+<script src="app/accounts/accounts.factory.js"></script>
+<script src="app/accounts/accounts.service.js"></script>
+<script src="app/auth/auth.login.controller.js"></script>
+<script src="app/auth/auth.logout.controller.js"></script>
+<script src="app/auth/auth.routes.js"></script>
+<script src="app/core/router.helper.provider.js"></script>
+<script src="app/core/settings.js"></script>
+<script src="app/core/templates.js"></script>
+<script src="app/market/market.list.controller.js"></script>
+<script src="app/market/market.routes.js"></script>
+<script src="app/tables/tables.products.factory.js"></script>
+<script src="app/tables/tables.transfers.factory.js"></script>
+<!-- endinject -->
+<!-- endbuild -->
+
+<!-- by default a base is required when html5Mode is enabled -->
+<!-- https://docs.angularjs.org/error/$location/nobase  -->
+<base href="/">
+</body>
+</html>

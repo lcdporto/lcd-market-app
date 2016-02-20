@@ -1,0 +1,20 @@
+<md-content md-scroll-y="" layout="column" flex="" class="layout-column flex" style="background: inherit;">
+
+    <md-card ng-repeat="product in vm.products" layout="row">
+        <div flex>
+            <md-card-title>
+                {{product.name}}
+                (<span style="color: forestgreen;">{{product.value}}€</span>)
+            </md-card-title>
+            <md-card-content>
+                <small>{{product.description}}</small>
+            </md-card-content>
+        </div>
+        <div layout="column" layout-padding layout-align="center center">
+            <md-button ng-click="vm.takeit(product.id);" class="md-raised md-primary">
+                <span ng-if="!vm.isTransfering">Take it!</span>
+                <md-progress-circular md-warn ng-if="vm.isTransfering" md-mode="indeterminate"></md-progress-circular>
+            </md-button>
+        </div>
+    </md-card>
+</md-content>
