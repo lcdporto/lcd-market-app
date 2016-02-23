@@ -41,9 +41,15 @@
     </header>
 
     <md-content flex="" role="navigation" class="flex">
-        <br/>
-        You'll see a menu here soon. Have a little faith!
-
+        <md-list id="menu-list">
+            <md-list-item>
+                <a ui-sref="market" ui-sref-active="active">Market</a>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item>
+                <a ui-sref="race" ui-sref-active="active">Leaderboard</a>
+            </md-list-item>
+        </md-list>
     </md-content>
 </md-sidenav>
 
