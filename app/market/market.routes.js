@@ -21,6 +21,15 @@
                     controller: 'MarketListController',
                     controllerAs: 'vm'
                 }
+            },
+            {
+                state: 'race',
+                config: {
+                    url: '/race',
+                    templateUrl: 'app/market/market.race.html',
+                    controller: 'MarketRaceController',
+                    controllerAs: 'vm'
+                }
             }
         ];
     }

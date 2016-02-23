@@ -8,7 +8,7 @@
     /* @ngInject */
     function Controller(ProductsTable, TransfersTable, AppSettings, $http, $rootScope) {
         var vm = this;
-        vm.title = 'Market products';
+        $rootScope.title = 'Market products';
         vm.products = [];
         vm.isTransfering = false;
 

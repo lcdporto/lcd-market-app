@@ -1,0 +1,49 @@
+<md-content style="background: inherit;">
+    <md-list>
+        <md-list-item ng-repeat-start="user in vm.users | orderBy: '-balance'">
+            <div class="user-graph" style="width: {{user.balance / vm.maxBalance * 100}}%"></div>
+            <p class="user-p" layout="row" layout-align="start center">
+                <span class="user-index">{{ ($index + 1) }}</span>
+                <span>
+                    <img class="md-avatar" ng-src="{{user.avatar}}"/>
+                </span>
+                <span>{{ user.fullName }}, <small>{{user.balance}} tokens</small></span>
+            </p>
+        </md-list-item>
+        <md-divider ng-repeat-end></md-divider>
+    </md-list>
+</md-content>
+
+
+<style>
+    .user-p{
+        position: relative;
+        z-index: 15;
+    }
+
+    .user-p > span {
+        display: inline-block;
+    }
+
+    .user-p > span:first-child {
+        border-right: solid 1px #E1E1E1;
+        padding: 0 10px;
+    }
+
+    .user-p > span > .md-avatar{
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+
+    .user-graph{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        background: darkseagreen;
+        opacity: 0.15;
+        z-index: 10;
+        -webkit-border-radius: 0 100px 100px 0;
+        border-radius: 0 100px 100px 0;
+    }
+</style>
