@@ -4,8 +4,8 @@ FROM nginx:latest
 # Maintainer Info
 MAINTAINER Ighor Martins <ighor.martins@gmail.com>
 
-# copy application code to /var/www/lcd-site
-COPY build/app /var/www/lcd-site/app
+# copy application code to /var/www/lcd-market
+COPY build/app /var/www/lcd-market/app
 
 # copy nginx configuration file
 
