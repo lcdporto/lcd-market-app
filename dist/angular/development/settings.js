@@ -6,7 +6,7 @@
         .constant('AppSettings', {
             appName: 'LCD Site Projects',
             appVersion: 0.1,
-            apiUrl: 'http://lcdmarket.audienciazero.local',
+            apiUrl: 'http://api.market.audienciazero.net',
             systemId: 4
         });
 })();
