@@ -22,12 +22,9 @@
         }
 
         function takeit(productId) {
-            var userId = $rootScope.authenticated.data.id;
             vm.isTransfering = true;
             var transfer = TransfersTable.$create({
-                product: productId,
-                account: userId,
-                target_account: AppSettings.systemId
+                product: productId
             }).$then(function () {
                 vm.isTransfering = false;
                 $http({
