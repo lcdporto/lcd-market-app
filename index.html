@@ -43,9 +43,12 @@
     <md-content flex="" role="navigation" class="flex">
         <md-list id="menu-list">
             <md-list-item>
-                <a ui-sref="market" ui-sref-active="active">Market</a>
+                <a ui-sref="transfersList" ui-sref-active="active">My transfers</a>
             </md-list-item>
             <md-divider></md-divider>
+            <md-list-item>
+                <a ui-sref="market" ui-sref-active="active">Market</a>
+            </md-list-item>
             <md-list-item>
                 <a ui-sref="race" ui-sref-active="active">Leaderboard</a>
             </md-list-item>
@@ -87,6 +90,8 @@
 <script src="bower_components/angular-restmod/dist/angular-restmod-bundle.min.js"></script>
 <script src="bower_components/lodash/lodash.js"></script>
 <script src="bower_components/restmod-style-drf-paged/restmod-style-drf-paged.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-moment/angular-moment.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -96,20 +101,22 @@
 <script src="app/app.module.js"></script>
 <script src="app/accounts/accounts.module.js"></script>
 <script src="app/auth/auth.module.js"></script>
-<script src="app/market/market.module.js"></script>
 <script src="app/core/core.module.js"></script>
+<script src="app/market/market.module.js"></script>
 <script src="app/tables/tables.module.js"></script>
 <script src="app/accounts/accounts.factory.js"></script>
+<script src="app/accounts/accounts.routes.js"></script>
 <script src="app/accounts/accounts.service.js"></script>
+<script src="app/accounts/accounts.transfers.list.controller.js"></script>
 <script src="app/auth/auth.login.controller.js"></script>
 <script src="app/auth/auth.logout.controller.js"></script>
 <script src="app/auth/auth.routes.js"></script>
-<script src="app/market/market.list.controller.js"></script>
-<script src="app/market/market.race.controller.js"></script>
-<script src="app/market/market.routes.js"></script>
 <script src="app/core/router.helper.provider.js"></script>
 <script src="app/core/settings.js"></script>
 <script src="app/core/templates.js"></script>
+<script src="app/market/market.list.controller.js"></script>
+<script src="app/market/market.race.controller.js"></script>
+<script src="app/market/market.routes.js"></script>
 <script src="app/tables/tables.accounts.factory.js"></script>
 <script src="app/tables/tables.products.factory.js"></script>
 <script src="app/tables/tables.transfers.factory.js"></script>

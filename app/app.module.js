@@ -16,7 +16,8 @@
             'ngFileUpload',
             'ngImgCrop',
             'restmod',
-            'restmod.styles.drfPaged'
+            'restmod.styles.drfPaged',
+            'angularMoment'
         ])
         .config(function ($urlRouterProvider,
                           $mdThemingProvider,

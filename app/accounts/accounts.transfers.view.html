@@ -1,0 +1,35 @@
+<md-content style="background: inherit;">
+    <md-list>
+        <md-list-item ng-repeat-start="transfer in vm.transfers | orderBy: '-updated'"
+                      ng-class="{'pending': transfer.isPendent}">
+            <md-tooltip ng-if="transfer.isPendent">This transfer is yet pending for evaluation</md-tooltip>
+            <p layout="row" layout-align="start space-around" layout-margin>
+                <span>{{ transfer.created | amCalendar }}</span>
+                <span flex><small>{{transfer.description}}</small></span>
+                <span>
+                    <small ng-class="{'green': transfer.targetAccount == authenticated.data.id, 'red': transfer.account == authenticated.data.id}">
+                        <span ng-if="transfer.targetAccount == authenticated.data.id">+</span>
+                        <span ng-if="transfer.account == authenticated.data.id">-</span>
+
+                        {{transfer.amount}} Ts
+                    </small>
+                </span>
+            </p>
+        </md-list-item>
+        <md-divider ng-repeat-end></md-divider>
+    </md-list>
+</md-content>
+
+<style>
+    .green {
+        color: green;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .pending{
+        background: #FCF8E3;
+    }
+</style>
