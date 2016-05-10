@@ -8,7 +8,7 @@
     /* @ngInject */
     function Controller(TransfersTable, $rootScope) {
         var vm = this;
-        $rootScope.title = 'Transfers';
+        $rootScope.title = 'Balance: ' + $rootScope.authenticated.data.balance + ' Ts';
 
         activate();
 

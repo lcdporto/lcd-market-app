@@ -6,6 +6,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="bower_components/ng-img-crop/compile/minified/ng-img-crop.css" />
+    <link rel="stylesheet" href="bower_components/md-steppers/dist/md-steppers.css" />
     <!-- endbower -->
 
     <!-- inject:css -->
@@ -43,7 +44,10 @@
     <md-content flex="" role="navigation" class="flex">
         <md-list id="menu-list">
             <md-list-item>
-                <a ui-sref="transfersList" ui-sref-active="active">My transfers</a>
+                <a ui-sref="transfersList" ui-sref-active="active">My balance</a>
+            </md-list-item>
+            <md-list-item>
+                <a ui-sref="transferTokens" ui-sref-active="active">Transfer tokens</a>
             </md-list-item>
             <md-divider></md-divider>
             <md-list-item>
@@ -92,6 +96,7 @@
 <script src="bower_components/restmod-style-drf-paged/restmod-style-drf-paged.js"></script>
 <script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/angular-moment/angular-moment.js"></script>
+<script src="bower_components/md-steppers/dist/md-steppers.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -107,6 +112,7 @@
 <script src="app/accounts/accounts.factory.js"></script>
 <script src="app/accounts/accounts.routes.js"></script>
 <script src="app/accounts/accounts.service.js"></script>
+<script src="app/accounts/accounts.transfer.tokens.controller.js"></script>
 <script src="app/accounts/accounts.transfers.list.controller.js"></script>
 <script src="app/auth/auth.login.controller.js"></script>
 <script src="app/auth/auth.logout.controller.js"></script>

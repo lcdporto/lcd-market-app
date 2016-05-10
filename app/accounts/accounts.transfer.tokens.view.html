@@ -1,0 +1,56 @@
+<md-content flex layout="row" layout-align="center center">
+
+    <table style="max-width: 500px; margin-top: 100px;" cellpadding="10px">
+        <tr>
+            <th align="right">Transferir para</th>
+            <td>
+                <md-input-container>
+                    <label>Membro</label>
+                    <md-select ng-model="vm.transfer.targetAccount">
+                        <md-option ng-value="account.id"
+                                   ng-repeat="account in vm.accounts | orderBy: 'fullName'">
+                            {{account.fullName}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </td>
+        </tr>
+        <tr>
+            <th align="right">Valor</th>
+            <td>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Tokens</label>
+                    <input ng-model="vm.transfer.amount" type="number" min="1">
+
+                </md-input-container>
+            </td>
+        </tr>
+        <th align="right">Description</th>
+        <td>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Description (Optional)</label>
+                <textarea ng-model="vm.transfer.description"></textarea>
+            </md-input-container>
+        </td>
+        </tr>
+        <tr ng-if="vm.transfer.$response.data.detail">
+            <td colspan="2">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <div ng-messages>
+                        <div>
+                            {{vm.transfer.$response.data.detail}}
+                        </div>
+                    </div>
+                </md-input-container>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <md-button class="md-raised md-accent" ng-disabled="!vm.transfer.amount || !vm.transfer.targetAccount"
+                           ng-click="vm.doTransfer();">
+                    Transfer
+                </md-button>
+            </td>
+        </tr>
+    </table>
+</md-content>

@@ -16,9 +16,18 @@
             {
                 state: 'transfersList',
                 config: {
-                    url: '/transferencias',
+                    url: '/mybalance',
                     templateUrl: 'app/accounts/accounts.transfers.view.html',
                     controller: 'TransfersListController',
+                    controllerAs: 'vm'
+                }
+            },
+            {
+                state: 'transferTokens',
+                config: {
+                    url: '/transfer-tokens',
+                    templateUrl: 'app/accounts/accounts.transfer.tokens.view.html',
+                    controller: 'TransferTokensController',
                     controllerAs: 'vm'
                 }
             }
